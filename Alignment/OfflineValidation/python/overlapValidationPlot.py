@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import math
 import ROOT
 from TkAlStyle import TkAlStyle
@@ -14,7 +16,10 @@ def hist(tree_file_name, hist_name,subdet_id,module_direction,overlap_direction,
     else: h = ROOT.TProfile(hist_name, hist_name, 10, -100, 100) 
 
     h.SetDirectory(0)
-    for entry in t:
+
+    nentries = t.GetEntries()
+
+    for i, entry in enumerate(t, start=1):
         if not ((t.subdetID == subdet_id)):
             continue
 	if module_direction not in ("r" ,"phi", "z"): 
@@ -88,6 +93,9 @@ def hist(tree_file_name, hist_name,subdet_id,module_direction,overlap_direction,
             h.Fill(A)
         elif profile_direction == "z":
             h.Fill((t.moduleZ[0]+t.moduleZ[1])/2, A)
+
+	if i % 10000 == 0 or i == nentries:
+	    print(i, "/", nentries)
         
     return h
 
