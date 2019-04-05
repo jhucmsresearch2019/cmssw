@@ -20,6 +20,8 @@ def hist(tree_file_name, hist_name,subdet_id,module_direction,overlap_direction,
     nentries = t.GetEntries()
 
     for i, entry in enumerate(t, start=1):
+        if i % 10000 == 0 or i == nentries:
+            print(i, "/", nentries)
         if not ((t.subdetID == subdet_id)):
             continue
 	if module_direction not in ("r" ,"phi", "z"): 
@@ -87,16 +89,13 @@ def hist(tree_file_name, hist_name,subdet_id,module_direction,overlap_direction,
             residualA *= -1
         if overlapSignB < 0:
             residualB *= -1
-        
+
         A = 10000*(residualA - residualB)
         if profile_direction is None:
             h.Fill(A)
         elif profile_direction == "z":
             h.Fill((t.moduleZ[0]+t.moduleZ[1])/2, A)
 
-	if i % 10000 == 0 or i == nentries:
-	    print(i, "/", nentries)
-        
     return h
 
 def plot(file_name,subdet_id,module_direction,overlap_direction,profile_direction,*filesTitlesColorsStyles):
