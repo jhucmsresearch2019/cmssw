@@ -559,7 +559,7 @@ OverlapValidation::analyze (const Trajectory& trajectory,
     localxdotglobalx_[1] = (*iol).second->recHit()->det()->surface().toGlobal(onezero).x() - (*iol).second->recHit()->det()->surface().toGlobal(zerozero).x();
     localxdotglobaly_[0] = (*iol).first->recHit()->det()->surface().toGlobal(onezero).y() - (*iol).first->recHit()->det()->surface().toGlobal(zerozero).y();
     localxdotglobaly_[1] = (*iol).second->recHit()->det()->surface().toGlobal(onezero).y() - (*iol).second->recHit()->det()->surface().toGlobal(zerozero).y();
-    localxdotglobalr_[0] = (*iol).first->recHit()->det()->surface().toGlobal(zeroone).perp() - (*iol).first->recHit()->det()->surface().toGlobal(zerozero).perp();
+    localydotglobalr_[0] = (*iol).first->recHit()->det()->surface().toGlobal(zeroone).perp() - (*iol).first->recHit()->det()->surface().toGlobal(zerozero).perp();
     localydotglobalr_[1] = (*iol).second->recHit()->det()->surface().toGlobal(zeroone).perp() - (*iol).second->recHit()->det()->surface().toGlobal(zerozero).perp();
     localydotglobalz_[0] = (*iol).first->recHit()->det()->surface().toGlobal(zeroone).z() - (*iol).first->recHit()->det()->surface().toGlobal(zerozero).z();
     localydotglobalz_[1] = (*iol).second->recHit()->det()->surface().toGlobal(zeroone).z() - (*iol).second->recHit()->det()->surface().toGlobal(zerozero).z();
