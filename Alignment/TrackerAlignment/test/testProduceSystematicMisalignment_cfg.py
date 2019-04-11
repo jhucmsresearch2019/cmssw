@@ -1,11 +1,11 @@
 #=================================
 #inputs
-globaltag = 'auto:phase1_2018_design'    #APEs are copied from this GT (and IdealGeometry and TrackerTopology are used)
+globaltag = '100X_upgrade2018_design_IdealBS_v8'   #APEs are copied from this GT (and IdealGeometry and TrackerTopology are used)
 inputsqlitefile = None                  #if None, uses the GT alignment
 alignmenttag = 'Alignments'             #tag name for TrackerAlignmentRcd in the input file, also used for the output file
 runnumberalignmentIOV = 1               #any run number in the iov that you want to start from
 
-outputfilename = 'outputfile.db'
+outputfilename = 'noDistortion.db'
 
 
 #misalignment amplitudes, -999 means no misalignment
@@ -15,7 +15,7 @@ outputfilename = 'outputfile.db'
 radialEpsilon     = -999. # 5e-4
 telescopeEpsilon  = -999. # 5e-4
 layerRotEpsilon   = -999. # 9.43e-6               #cm^-1
-bowingEpsilon     = -999. # 6.77e-9               #cm^-2
+bowingEpsilon     = -999 # 6.77e-9               #cm^-2
 zExpEpsilon       = -999. # 2.02e-4
 twistEpsilon      = -999. # 2.04e-6               #cm^-1
 ellipticalEpsilon = -999. # 5e-4
