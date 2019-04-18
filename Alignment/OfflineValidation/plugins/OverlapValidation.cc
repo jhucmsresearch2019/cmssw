@@ -418,8 +418,8 @@ OverlapValidation::analyze (const Trajectory& trajectory,
 	  //cout << "adding pair "<< ((subDet > 2)?(SiStripDetId(id).stereo()) : 2) << " from subDet = " << subDet << " and layer = " << layer;
 	  //cout << " \t"<<run_<< "\t"<<event_<<"\t";
 	  //cout << min(id.rawId(),compareId.rawId())<<"\t"<<max(id.rawId(),compareId.rawId())<<endl;
-	  if (  SiStripDetId(id).glued() == id.rawId() ) edm::LogWarning("Overlaps") << "BAD GLUED: Have glued layer with id = " << id.rawId() << " and glued id = " << SiStripDetId(id).glued() << "  and stereo = " << SiStripDetId(id).stereo() << endl;
-	  if (  SiStripDetId(compareId).glued() == compareId.rawId() ) edm::LogWarning("Overlaps") << "BAD GLUED: Have glued layer with id = " << compareId.rawId() << " and glued id = " << SiStripDetId(compareId).glued() << "  and stereo = " << SiStripDetId(compareId).stereo() << endl;
+	  if (  SiStripDetId(id).glued() == id.rawId() ) edm::LogInfo("Overlaps") << "BAD GLUED: Have glued layer with id = " << id.rawId() << " and glued id = " << SiStripDetId(id).glued() << "  and stereo = " << SiStripDetId(id).stereo() << endl;
+	  if (  SiStripDetId(compareId).glued() == compareId.rawId() ) edm::LogInfo("Overlaps") << "BAD GLUED: Have glued layer with id = " << compareId.rawId() << " and glued id = " << SiStripDetId(compareId).glued() << "  and stereo = " << SiStripDetId(compareId).stereo() << endl;
 	  break;
 	}
       }
